@@ -8,16 +8,32 @@
     <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"/>
     <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
 </head>
+<style>
+footer {
+    background-color: #3333337c; /* Background color of the footer */
+    color: #fff; /* Text color */
+    padding: 20px 0; /* Padding for top and bottom */
+    text-align: center; /* Center-align the text */
+}
+
+.footer-content {
+    font-size: 14px; /* Font size for the text */
+}
+
+
+</style>
 <body>
-    <div class="container">
+    <div class="container-fluid">
+      <marquee behavior="" direction="">
         <div class="row bg-danger text-light">
-            <div class="col-sm-4" style="text-align: center;">Contact No:- 9087654323</div>
-            <div class="col-sm-4" style="text-align: center;">Email:-ujjwal@gmail.com</div>
-            <div class="col-sm-4" style="text-align: center;">Follow Us</div>
+            <div class="col-sm-5" style="text-align: center;">Contact No:- 7800701404</div>
+            <div class="col-sm-6" style="text-align: center;">Email:-ujjwalgoyal2514@gmail.com</div>
+            {% comment %} <div class="col-sm-4" style="text-align: center;">Follow Us</div> {% endcomment %}
         </div>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      </marquee>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" style="max-width:100%">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Library Management System</a>
+              <a class="navbar-brand" href="#"><img src="{% static 'images/logo.jpeg' %}" style="width:50px;height:50px;"alt=""></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -47,51 +63,18 @@
             </div>
           </nav>
           <div id="carouselExample" class="carousel slide">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="{% static 'images/library hi.jpg' %}" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="{% static 'images/iimb.jpg' %}" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="{%static 'images/twitter.jpg' %}" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-<div class="row mt-2">
-  <div class="col-sm-3" style="background-color: aqua;min-height: 600px;"></div>
-  <div class="col-sm-9" style="background-color: bisque;min-height: 600px;">
+  
   {% block main %}
 
 
   {% endblock main %}
 </div>
 </div>
-<div class="row mt-2">
-  <div class="col-sm-4" style="background-color:gray;min-height: 500px;">
-    <div class="card" style="width: 18rem;">
-      <div class="card-header">
-        Contact Us
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Vellore Institute of Technology,Bhopal,Pincode-461141</li>
-        <li class="list-group-item">registerrer@vitbhopal.ac.in</li>
-        <li class="list-group-item">registrar@gmail.com</li>
-      </ul>
-    </div>
-  </div>
-   <div class="col-sm-4" style="background-color:aquamarine;min-height:  250px;"></div>
-    <div class="col-sm-4" style="background-color:aqua;min-height:250px;"></div>
-</div>
-    </div>
+<footer>
+        <div class="footer-content">
+            <p>&copy; 2023 Ujjwal Goyal. All Rights Reserved.</p>
+        </div>
+</footer>
+
 </body>
 </html>
