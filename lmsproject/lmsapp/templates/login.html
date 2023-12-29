@@ -1,0 +1,70 @@
+{% extends "parent.html" %}
+{% block main %}
+{% if messages %}
+  {% for messages in messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{messages}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {% endfor %}
+{% endif %}
+<script>
+    function validate()
+    {
+       var userid=document.getElementById("userid");
+       var password=document.getElementById("password");
+       if(userid.value==""|| userid==null)  
+      {
+        alert('Please Enter userid');
+        userid.focus();
+      }
+      else if(password.value=="" || password.value==null)
+      {
+        alert('Please Enter Password');
+        password.focus();
+      }
+      else 
+      {
+        document.getElementById("frmlogin").submit();
+      }
+    }
+</script>
+
+<h1 style="text-align: center;">Login Form</h1>
+<form class="form-group" id="frmlogin" onsubmit="event.preventDefault();validate();" method="post" action="{% url 'lmsapp:login' %}">
+    {% csrf_token %}
+    <table class="table" style="width: 80%; margin: auto;">
+        <tr>
+            <td>Enter User Id/Roll No</td>
+            <td>
+                <input type="text" name="userid" class="form-control" id="userid"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Enter Password</td>
+            <td>
+            <input type="password" name="password" class="form-control" id="password"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Select User Type</td>
+            <td>
+                <select name="usertype" class="form-control">
+                    <option selected>-Select User Type-</option>
+                    <option value="student">Student</option>
+                    <option value="admin">Administrator</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <button type="submit" class="btn btn-info">Login</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+
+
+{% endblock main%}

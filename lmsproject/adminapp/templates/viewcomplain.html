@@ -1,0 +1,40 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <div class="row">
+        <h1 style="text-align:center;">View Complain</h1>   
+        <div class="col-sm-12" style="overflow-x:scroll;">
+            <table class="table table-bordered text-light">
+                <tr>
+                    <th>Id</th>
+                    <th>Rollno</th>
+                    <th>Name</th>
+                    <th>Program</th>
+                    <th>Branch</th>
+                    <th>year</th>
+                    <th>Contact No</th>
+                    <th>Email Address</th>
+                    <th>Subject</th>
+                    <th>Complain</th>
+                    <th>Complain Date</th>
+                </tr>
+                {% for f in complain %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{f.rollno}}</td>
+                    <td>{{f.name}}</td>
+                    <td>{{f.program}}</td>
+                    <td>{{f.branch}}</td>
+                    <td>{{f.year}}</td>
+                    <td>{{f.contactno}}</td>
+                    <td>{{f.emailaddress}}</td>
+                    <td>{{f.subject}}</td>
+                    <td>{{f.responseText}}</td>
+                    <td>{{f.responsedate}}</td>
+                </tr>
+
+                {% endfor %}
+            </table>
+              
+        </div>
+    </div>
+{% endblock body %}

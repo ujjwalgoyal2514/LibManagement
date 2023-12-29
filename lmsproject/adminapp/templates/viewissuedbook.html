@@ -1,0 +1,49 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <div class="row">
+        <h1 style="text-align:center;">Issued Books</h1> 
+        <div class="col-sm-12" style="overflow-x:scroll;">
+              
+            <table class="table table-bordered text-light">
+                <tr>
+                    <th>Id</th>
+                    <th>Bookid</th>
+                    <th>ISBN Number</th>
+                    <th>Program</th>
+                    <th>Branch</th>
+                    <th>Subject</th>
+                    <th>Bookname</th>
+                    <th>Authorname</th>
+                    <th>Roll Number</th>
+                    <th>Name</th>
+                    <th>Year</th>
+                    <th>Issue Date</th>
+                    <th>Due Date</th>
+                    <th>Action</th>
+                    {% comment %} <th>Status</th> {% endcomment %}
+                </tr>
+                {% for b in issue %}
+                <tr>
+                    <td>{{b.id}}</td>
+                    <td>{{b.bookid}}</td>
+                    <td>{{b.isbno}}</td>
+                    <td>{{b.program}}</td>
+                    <td>{{b.branch}}</td>
+                    <td>{{b.subject}}</td>
+                    <td>{{b.bookname}}</td>
+                    <td>{{b.authorname}}</td>
+                    <td>{{b.rollno}}</td>
+                    <td>{{b.name}}</td>
+                    <td>{{b.year}}</td>
+                    <td>{{b.issuedate}}</td>
+                    <td>{{b.duedate}}</td>
+                    <td><a href="{% url 'adminapp:ret' id=b.id %}"><button class="btn btn-danger">Return</button></a></td>
+                    {% comment %} <td>{{b.status}}</td> {% endcomment %}
+                </tr>
+
+                {% endfor %}
+            </table>  
+        </div>
+    </div>
+{% endblock body %}
+

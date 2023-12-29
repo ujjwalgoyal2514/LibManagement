@@ -1,0 +1,45 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <div class="row">
+        <h1 style="text-align:center;">Returned Book List</h1>  
+        <div class="col-sm-12" style="overflow-x:scroll">
+             
+            <table class="table table-bordered text-light">
+                <tr>
+                    <th>Issue Id</th>
+                    <th>Bookid</th>
+                    <th>ISBN Number</th>
+                    {% comment %} <th>Program</th>
+                    <th>Branch</th>
+                    <th>Subject</th> {% endcomment %}
+                    <th>Bookname</th>
+                    <th>Authorname</th>
+                    <th>Roll Number</th>
+                    <th>Name</th>
+                    {% comment %} <th>Year</th> {% endcomment %}
+                    <th>Issue Date</th>
+                    <th>Due Date</th>
+                    {% comment %} <th>Status</th> {% endcomment %}
+                </tr>
+                {% for b in book %}
+                <tr>
+                    <td>{{b.id}}</td>
+                    <td>{{b.bookid}}</td>
+                    <td>{{b.isbno}}</td>
+                    {% comment %} <td>{{b.program}}</td>
+                    <td>{{b.branch}}</td>
+                    <td>{{b.subject}}</td> {% endcomment %}
+                    <td>{{b.bookname}}</td>
+                    <td>{{b.authorname}}</td>
+                    <td>{{b.rollno}}</td>
+                    <td>{{b.name}}</td>
+                    {% comment %} <td>{{b.year}}</td> {% endcomment %}
+                    <td>{{b.issuedate}}</td>
+                    <td>{{b.duedate}}</td>
+                </tr>
+
+                {% endfor %}
+            </table>  
+        </div>
+    </div>
+{% endblock body %}
